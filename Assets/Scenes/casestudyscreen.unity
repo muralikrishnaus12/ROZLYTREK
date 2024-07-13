@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 380993746}
   - component: {fileID: 380993745}
   - component: {fileID: 380993749}
+  - component: {fileID: 380993750}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -244,6 +245,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: questionscreen
+--- !u!114 &380993750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380993744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042939d45c157dd438d007743c8fe171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBoxes:
+  - {fileID: 484631837}
+  - {fileID: 644567560}
+  - {fileID: 814718036}
+  - {fileID: 810872469}
+  - {fileID: 452003834}
+  - {fileID: 651947205}
+  - {fileID: 1853038660}
+  caseImage: {fileID: 1346602971}
+  lungSprite: {fileID: 21300000, guid: b45046376f54de2438bbcdf9f1bc61f7, type: 3}
+  headAndNeckSprite: {fileID: 21300000, guid: 259dbe29fea4d3d48a7bd812d4e2bd8a, type: 3}
+  breastSprite: {fileID: 21300000, guid: 52e7eff2084435e4dbcee67a637f0147, type: 3}
+  sarcomaSprite: {fileID: 21300000, guid: d42d35070176fe049a88a434d07e51c7, type: 3}
+  crcSprite: {fileID: 21300000, guid: bc36803d8516f5742811a68c817d3b05, type: 3}
+  ifsSprite: {fileID: 21300000, guid: 1c8bba0d3eabc73489c8580fc4b49371, type: 3}
 --- !u!1 &411689908
 GameObject:
   m_ObjectHideFlags: 0

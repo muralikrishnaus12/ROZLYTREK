@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menuscreen.unity
     guid: 7026bd347debc014fa67761b60f35476
   - enabled: 1
+    path: Assets/Scenes/duplicate.unity
+    guid: 862f8d3381fbe2342b734f2642659822
+  - enabled: 0
     path: Assets/Scenes/casestudyscreen.unity
     guid: 0494113862d58d84199aa5097d82659e
   - enabled: 1

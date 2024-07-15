@@ -266,12 +266,15 @@ MonoBehaviour:
   - {fileID: 651947205}
   - {fileID: 1853038660}
   caseImage: {fileID: 1346602971}
+  buttonPrefab: {fileID: 0}
+  buttonContainer: {fileID: 0}
   lungSprite: {fileID: 21300000, guid: b45046376f54de2438bbcdf9f1bc61f7, type: 3}
   headAndNeckSprite: {fileID: 21300000, guid: 259dbe29fea4d3d48a7bd812d4e2bd8a, type: 3}
   breastSprite: {fileID: 21300000, guid: 52e7eff2084435e4dbcee67a637f0147, type: 3}
   sarcomaSprite: {fileID: 21300000, guid: d42d35070176fe049a88a434d07e51c7, type: 3}
   crcSprite: {fileID: 21300000, guid: bc36803d8516f5742811a68c817d3b05, type: 3}
   ifsSprite: {fileID: 21300000, guid: 1c8bba0d3eabc73489c8580fc4b49371, type: 3}
+  sceneSwitcher: {fileID: 380993749}
 --- !u!1 &411689908
 GameObject:
   m_ObjectHideFlags: 0

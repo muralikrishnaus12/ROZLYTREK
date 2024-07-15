@@ -64,38 +64,20 @@ public class casestudyscreen : MonoBehaviour
 
     void OnButtonClick(string selectedCase, int index)
     {
-        bool shouldSwitchScene = false;
+        Debug.Log("Button " + index + " clicked.");
 
-        switch (selectedCase)
+        // Prepare data to be sent to the next scene
+        CaseStudyManager.selectedCase = selectedCase;
+        CaseStudyManager.selectedIndex = index; // Store the index instead of the isCorrectOption
+
+        // Call the SwitchScene method of the SceneSwitcher component
+        if (sceneSwitcher != null)
         {
-            case "lung":
-                if (index == 3) shouldSwitchScene = true;
-                break;
-            case "breast":
-                if (index == 4) shouldSwitchScene = true;
-                break;
-            // Add more cases here as needed
-            // case "caseName":
-            //     if (index == desiredIndex) shouldSwitchScene = true;
-            //     break;
-            default:
-                shouldSwitchScene = false;
-                break;
+            sceneSwitcher.SwitchScene();
         }
-
-        if (shouldSwitchScene)
+        else
         {
-            Debug.Log("Button " + index + " clicked");
-
-            // Call the SwitchScene method of the SceneSwitcher component
-            if (sceneSwitcher != null)
-            {
-                sceneSwitcher.SwitchScene();
-            }
-            else
-            {
-                Debug.LogError("SceneSwitcher component is not assigned.");
-            }
+            Debug.LogError("SceneSwitcher component is not assigned.");
         }
     }
 
@@ -107,7 +89,7 @@ public class casestudyscreen : MonoBehaviour
             case "lung":
                 return new string[] { "LUNG", "55-year-old male with marked shortness of breath.", "• 55-year-old male with marked shortness of breath\r\n• Never smoker; ECOG PS 2\r\n• Diagnostic work up showed left lung adenocarcinoma with involvement of left supraclavicular lymph nodes and left pleural effusion\r\n• MRI scan showed one CNS lesion\r\n• Diagnosed as NSCLC Stage IVA; T3N3M1b", "Start platinum-based chemotherapy\r\n (no molecular testing)", "Test only for selected targets (PD-L1, EGFR, ALK, ROS1, BRAF) via FISH/IHC", "Test only for selected targets (PD-L1, EGFR, ALK, ROS1, BRAF) via FISH/IHC", "Perform\r\nlarge-panel testing; NGS" };
             case "headandneck":
-                return new string[] { "Head And Neck", "42-year-old female with large, painful\vmass and skin infiltration in the parotid area\r\n", "42-year-old female with large, painful mass and skin infiltration in the parotid area\r\nInitial diagnosis: stage III (pT3N0M0) parotid acinic cell carcinoma\r\n", "Recommend surgery, radiotherapy and/or chemotherapy\r\n", "Start standard-of-care therapy and request molecular testing\r\n", "Request molecular testing before initiating therapy\r\n" };
+                return new string[] { "Head And Neck", "42-year-old female with large, painful mass and skin infiltration in the parotid area\r\n", "42-year-old female with large, painful mass and skin infiltration in the parotid area\r\nInitial diagnosis: stage III (pT3N0M0) parotid acinic cell carcinoma\r\n", "Recommend surgery, radiotherapy and/or chemotherapy\r\n", "Start standard-of-care therapy and request molecular testing\r\n", "Request molecular testing before initiating therapy\r\n" };
             case "breast":
                 return new string[] { "breast", "25-year-old female with bloody discharge from left nipple for\v6 months\r\n", "25-year-old female with bloody discharge from left nipple for 6 months\r\n3-cm mass detected in left breast by sonography (stage IIA)\r\nNo family history of breast cancer\r\nTriple negative for HER2, ER, PR\r\n", "TNBC\r\n", "Secretory breast carcinoma\r\n", "Secretory breast carcinoma\r\n" };
             case "sarcoma":

@@ -12,6 +12,8 @@ public class CaseStudyManager : MonoBehaviour
     public Button ifsButton;
 
     public static string selected = "lung";
+    public static string selectedCase;
+    public static int selectedIndex;
 
     void Start()
     {

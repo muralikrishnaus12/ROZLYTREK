@@ -24,8 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/infoscreen.unity
     guid: 6c56083becca30b46be2a6fb9559cb96
   - enabled: 1
+    path: Assets/Scenes/infoscreen1.unity
+    guid: 9552ae5a7b3c25748b96d054aa00e528
+  - enabled: 1
     path: Assets/Scenes/resultscreen.unity
     guid: 37dced6d3ea302b4d9642012c3ea783e
+  - enabled: 1
+    path: Assets/Scenes/resultscreen1.unity
+    guid: 2a0d3c70dab37e64c974ff09bfb02be8
   - enabled: 1
     path: Assets/Scenes/summaryscreen.unity
     guid: d370da406980cb5428e5739adc254204

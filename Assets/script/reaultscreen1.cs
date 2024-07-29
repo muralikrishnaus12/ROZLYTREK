@@ -1,7 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CaseStudyScreen : MonoBehaviour
+public class resultscreen1 : MonoBehaviour
 {
     public Text[] textBoxes;
     public Image caseImage;
@@ -9,12 +9,11 @@ public class CaseStudyScreen : MonoBehaviour
     public Transform buttonContainer;
     public SceneSwitcher sceneSwitcher;
 
-
     void Start()
     {
         string selectedCase = CaseStudyManager.selected;
         Debug.Log("Selected case from CaseStudyScreen: " + selectedCase);
-        
+
         UpdateUI(selectedCase);
     }
 
@@ -38,7 +37,7 @@ public class CaseStudyScreen : MonoBehaviour
             textBoxes[i].text = "";
         }
 
-        for (int i = 1; i < caseDetails.Length; i++)
+        for (int i = 2; i < caseDetails.Length; i++)
         {
             Debug.Log("Creating button for: " + caseDetails[i]);
 
@@ -62,21 +61,37 @@ public class CaseStudyScreen : MonoBehaviour
     {
         Debug.Log("Button " + index + " clicked.");
 
-        // Store selected case and index for later use if needed
+        // Store selected case and index for use in other scripts
         CaseStudyManager.selectedCase = selectedCase;
-        CaseStudyManager.selectedIndexcs = index;
+        CaseStudyManager.selectedIndexrs = index;
 
-        // Example: Switch to another scene
+        // Set the scene name based on conditions
+        string sceneName = "summaryscreen"; // Default scene name, replace with your logic
+
+        // Example condition to set sceneName
+        if (selectedCase == "crc")
+        {
+            sceneName = "infoscreen1";
+        }
+        else if(selectedCase == "ifs")
+        {
+            CaseStudyManager.selectedIndexcs = 1;
+            sceneName = "infoscreen";
+        }
+        // Add more conditions as needed
+
+        // Switch scene if scene switcher is assigned
         if (sceneSwitcher != null)
         {
-            
+            // Set the scene name in SceneSwitcher
+            sceneSwitcher.SetSceneName(sceneName);
+            // Perform the scene switch
             sceneSwitcher.SwitchScene();
         }
         else
         {
             Debug.LogError("SceneSwitcher component is not assigned.");
         }
-
     }
 
     string[] GetCaseDetails(string selectedCase)
@@ -88,22 +103,22 @@ public class CaseStudyScreen : MonoBehaviour
         {
             case "lung":
                 // Return case-specific details
-                return new string[] { "55-year-old male with marked shortness of breath\r\nNever smoker; ECOG PS 2\r\nDiagnostic work up showed left lung adenocarcinoma with involvement of left supraclavicular lymph nodes and left pleural effusion\r\nMRI scan showed one CNS lesion\r\nDiagnosed as NSCLC Stage IVA; T3N3M1b\r\n","Start platinum-based chemotherapy\r\n (no molecular testing)", "Test only for selected targets (PD-L1, EGFR, ALK, ROS1, BRAF) via FISH/IHC", "Test only for selected targets (PD-L1, EGFR, ALK, ROS1, BRAF) via FISH/IHC", "Perform\r\nlarge-panel testing; NGS" };
+                return new string[] { "No gene alteration identified in the specific targets tested by IHC/FISH \nNGS identified NTRK1-SQSTM1 fusion\r\n","Knowing that the patient has CNS disease, what treatment would you select?\r\n→ Large-panel sequencing performed", "TRK inhibitor (including clinical trial)\r\n", " Further chemotherapy\r\n", " Radiotherapy for CNS metastases, along with systemic treatment (including TRK inhibitor)", "Other" };
             case "headandneck":
                 // Return case-specific details
-                return new string[] { "25-year-old female with bloody discharge from left nipple for 6 months\r\n3-cm mass detected in left breast by sonography (stage IIA)\r\nNo family history of breast cancer\r\nTriple negative for HER2, ER, PR\r\n", "Recommend surgery, radiotherapy and/or chemotherapy\r\n", "Start standard-of-care therapy and request molecular testing\r\n", "Request molecular testing before initiating therapy\r\n" };
+                return new string[] { };
             case "breast":
                 // Return case-specific details
-                return new string[] { "48-year-old male with a palpable and painful lump on the right thigh\r\nMRI imaging and biopsy suggested undifferentiated sarcoma with \v6-cm resectable tumour, histologic grade (G1), stage IB\r\nBiopsy showed positivity for SMA and negative for CD31, CD34, desmin, keratins, S100\r\n", "TNBC\r\n", "Secretory breast carcinoma\r\n", "Other" };
+                return new string[] { };
             case "sarcoma":
                 // Return case-specific details
-                return new string[] { "42-year-old female with large, painful mass and skin infiltration in the parotid area\r\nInitial diagnosis: stage III (pT3N0M0) parotid acinic cell carcinoma\r\n", "Chemotherapy or\r\nradiotherapy", "Surgery\r\n+\r\nchemotherapy", "Primary resection\v\n�\v\nradiotherapy\r\n" };
+                return new string[] { };
             case "crc":
                 // Return case-specific details
-                return new string[] { "68-year-old female with progressive fatigue, rectal bleeding and severe abdominal pain\r\nCT scan revealed a large mass in the sigmoid colon and\vmultiple hepatic lesions\r\nDiagnosed with unresectable metastatic colorectal cancer\r\n", "Chemoradiotherapy\vonly\r\n", "Molecular\vtesting\r\n" };
+                return new string[] { "Biopsy of primary tumour: KRAS and BRAF WT; MSI-H\r\n• Additional testing performed to further characterise the molecular profile of the tumour\r\nLMNA-NTRK1 gene fusion detected by NGS\r\n","What treatment would you recommend knowing the tumour has an\r\nLMNA-NTRK1 fusion?\r\n", "Further chemotherapy\r\n" , "Regorafenib","TRK inhibitor (including enrolment into clinical trial)", "Other" };
             case "ifs":
                 // Return case-specific details
-                return new string[] { "8-year-old male with a rapidly growing mass on the right hand\r\nDiagnosed as infantile fibrosarcoma\r\n", "Surgery\v+\vlarge-panel NGS\r\n", "Surgery\vonly\r\n", "Surgery\v+\vchemotherapy\r\n" };
+                return new string[] { "What treatment would you select for this patient?\r\n", "TRK inhibitor\r\n", "Surgery + chemotherapy\r\n", "Surgery alone\r\n", "Other" };
             default:
                 return new string[] { "Unknown case details" };
         }

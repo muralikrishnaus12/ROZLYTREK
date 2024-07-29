@@ -823,6 +823,12 @@ MonoBehaviour:
   sarcomaButton: {fileID: 116498116}
   crcButton: {fileID: 850075253}
   ifsButton: {fileID: 366235764}
+  lungSpriteRef: {fileID: 21300000, guid: b45046376f54de2438bbcdf9f1bc61f7, type: 3}
+  headAndNeckSpriteRef: {fileID: 21300000, guid: 259dbe29fea4d3d48a7bd812d4e2bd8a, type: 3}
+  breastSpriteRef: {fileID: 21300000, guid: 52e7eff2084435e4dbcee67a637f0147, type: 3}
+  sarcomaSpriteRef: {fileID: 21300000, guid: d42d35070176fe049a88a434d07e51c7, type: 3}
+  crcSpriteRef: {fileID: 21300000, guid: bc36803d8516f5742811a68c817d3b05, type: 3}
+  ifsSpriteRef: {fileID: 21300000, guid: 1c8bba0d3eabc73489c8580fc4b49371, type: 3}
 --- !u!1 &414415722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,10 +2576,10 @@ RectTransform:
   - {fileID: 810872468}
   m_Father: {fileID: 1324539841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 399.53, y: -1537}
-  m_SizeDelta: {x: 231.469, y: 44.801}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -0.47000122, y: 107}
+  m_SizeDelta: {x: 231.469, y: 44.801025}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1731050824
 MonoBehaviour:

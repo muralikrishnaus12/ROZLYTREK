@@ -63,6 +63,12 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
+    // Method to set the scene name
+    public void SetSceneName(string name)
+    {
+        sceneName = name;
+    }
+
     public void SwitchScene()
     {
         // Check if the scene name is set

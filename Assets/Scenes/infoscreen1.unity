@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48e6b7988ee87f34ea5fccba817a81ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  sceneName: resultscreen1
 --- !u!114 &380993750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 380993744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbaf1d925fa63d94c9d88396146312f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 16d905a29c0cb82458fac77bbc2d001c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textBoxes:
